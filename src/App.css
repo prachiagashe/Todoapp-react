@@ -1,38 +1,176 @@
-.App {
-  text-align: center;
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Background */
+body {
   min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+/* Main container */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Calendar */
+.calendar-input {
+  width: 100%;
+  height: 42px;
+  margin: 10px 0;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1px solid #475569;
+  background-color: hsl(266, 84%, 5%);
+  color: #e5e7eb;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Change calendar icon color */
+.calendar-input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+
+.calendar-input:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+/* Card */
+.center-container {
+  height: 520px;
+  width: 360px;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 25px 50px #15ce94db;
+  overflow-y: auto;
+}
+
+/* Heading */
+.app-heading {
+  text-align: center;
+  margin-bottom: 8px;
+  color: #f8fafc;
+  letter-spacing: 3px;
+  font-size: 22px;
+}
+
+/* Input section */
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.input-box-todo {
+  width: 70%;
+  height: 44px;
+  border-radius: 22px;
+  border: none;
+  padding-left: 16px;
+  font-size: 15px;
+  background-color: #020617;
+  color: #e5e7eb;
+  outline: none;
+  box-shadow: inset 0 0 0 2px #334155;
+  transition: 0.25s;
+}
+
+.input-box-todo::placeholder {
+  color: #94a3b8;
+}
+
+.input-box-todo:focus {
+  box-shadow: inset 0 0 0 2px #38bdf8;
+}
+
+/* Add button */
+.add-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
   color: white;
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.add-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.6);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-btn:active {
+  transform: scale(0.95);
+}
+
+/* Todo list */
+.list-container {
+  margin-top: 12px;
+}
+
+/* Todo item */
+.list-item {
+  list-style: none;
+  background-color: #020617;
+  border: 1px solid #334155;
+  color: #e5e7eb;
+  padding: 10px 14px;
+  border-radius: 12px;
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 10px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.list-item:hover {
+  background-color: #020617;
+  transform: translateY(-2px);
+}
+
+/* Icons */
+.icons {
+  position: absolute;
+  right: 14px;
+}
+
+.icons i {
+  margin-left: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.icons i:hover {
+  transform: scale(1.25);
+}
+
+/* Delete icon */
+.icon-delete {
+  color: #fb7185;
+}
+
+.icon-delete:hover {
+  color: #f43f5e;
 }
